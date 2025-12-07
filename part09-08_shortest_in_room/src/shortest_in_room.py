@@ -33,16 +33,16 @@ class Room:
             for x in self.persons:
                 if x.height <= short.height:
                     short = x
-            return short.name
+            return short
 
     def remove_shortest(self):
         if self.is_empty():
             return None
         else:
             short = self.shortest()
-            per = [n for n in self.persons if n.name != short]
+            per = [n for n in self.persons if n.name != short.name]
             for n in self.persons:
-                 if n.name == short:
+                 if n.name == short.name:
                     self.persons = per
                     return n
         

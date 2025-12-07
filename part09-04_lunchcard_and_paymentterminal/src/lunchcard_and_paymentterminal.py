@@ -12,6 +12,7 @@ class LunchCard:
             return False
         else:
             self.balance -= amount
+            return True
         # The amount should be subtracted from the balance only if there is enough money on the card
         # If the payment is successful, the method returns True, and otherwise it returns False
 
@@ -62,7 +63,7 @@ class PaymentTerminal:
         # A special lunch costs 4.30 euros.
         # If there is enough money on the card, subtract the price of the lunch from the balance
         # and return True. If not, return False.
-        if card.balance >= 4.3:
+        if card.balance >= 4.30:
             card.subtract_from_balance(4.3)
             self.specials +=1
             return True

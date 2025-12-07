@@ -53,13 +53,25 @@ class SimpleDate:
             c = c + d
             e = self.day -another.day
             c = c + e
+        else:
+            c =another.year - self.year
+            c = c * 12
+            c = c * 30
+            d = another.month - self.month 
+            d = d * 30
+            c = c + d
+            e = another.day - self.day 
+            c = c + e
+
         return abs(c)
 
 if __name__ == "__main__":
     d1 = SimpleDate(4, 10, 2020)
     d2 = SimpleDate(2, 11, 2020)
     d3 = SimpleDate(28, 12, 1985)
+    sd1 = SimpleDate(1, 4, 1800)
+    sd2 = SimpleDate(3, 5, 1842)
 
     print(d2-d1)
-    print(d1-d2)
+    print(sd1-sd2)
     print(d1-d3)

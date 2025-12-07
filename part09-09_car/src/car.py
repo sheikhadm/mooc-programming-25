@@ -12,11 +12,13 @@ class Car:
         self.__pet = 60
     
     def drive(self,km:int):
-        self.__odo = km
-        if km >= self.__pet:
-            self.__pet = 0
-        else:
-            self.__pet -= km
+        distance_possible = min(km, self.__pet)
+
+        # Increase odometer by the distance actually driven
+        self.__odo += distance_possible
+
+        # Petrol reduces by the distance driven
+        self.__pet -= distance_possible
 
 if __name__ == "__main__":
     car = Car()

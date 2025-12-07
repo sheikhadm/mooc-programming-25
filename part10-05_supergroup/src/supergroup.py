@@ -25,6 +25,7 @@ class SuperGroup():
         self._members.append(hero)
 
     def print_group(self):
+        print(f'{self._name}, {self._location}')
         print ('Members:')
         for x in self._members:
             print(x)

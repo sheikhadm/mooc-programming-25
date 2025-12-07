@@ -6,17 +6,15 @@ class Person:
         self.__numbers = []
         self.__address = None
     
-    @property
+    
     def name(self):
         return self.__name
     
-    @property
+    
     def numbers(self):
-        if len(self.__numbers) == 0:
-            return None
         return self.__numbers
     
-    @property
+
     def address(self):
         return self.__address
     
@@ -26,7 +24,6 @@ class Person:
     def add_address(self,address:str):
         self.__address = address
     
-        
         
 
 
@@ -56,6 +53,7 @@ class PhoneBook:
 
     def all_entries(self):
         return self.__persons
+    
 
 class PhoneBookApplication:
     def __init__(self):
@@ -85,20 +83,20 @@ class PhoneBookApplication:
             print("number unknown") 
             print('address unknown')
             return 
-        elif numbers.address == None and numbers.numbers != None:
+        elif numbers.address() == None and numbers.numbers() != None:
             
-            for number in numbers.numbers:
+            for number in numbers.numbers():
                 print(number) 
             print('address unknown')
             return
-        elif numbers.numbers == None and numbers.address != None:
+        elif numbers.numbers() == [] and numbers.address() != None:
             print("number unknown")
-            print(numbers.address)
+            print(numbers.address())
             return
         else:
-            for number in numbers.numbers:
+            for number in numbers.numbers():
                 print(number) 
-            print(numbers.address)
+            print(numbers.address())
 
         
        

@@ -8,7 +8,7 @@ def generate_strong_password(x: int, n: bool, p: bool):
     punc = ['!', '?', '=', '+', '-', '(', ')', '#']
 
     password_chars = []
-
+    password_chars.append(random.choice(letters))
     # Guarantee at least one number if n is True
     if n:
         password_chars.append(random.choice(num))

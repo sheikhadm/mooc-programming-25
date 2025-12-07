@@ -81,8 +81,10 @@ class RockPaperScissors(WordGame):
             # Determine winner
             if beats[p1] == p2:
                 return 1
-            else:
+            elif beats[p2] == p1:
                 return 2
+            else:
+                return 0
             
         elif player1_word.lower() in c and player2_word.lower() not in c:
             return 1
@@ -91,6 +93,6 @@ class RockPaperScissors(WordGame):
 
 
 if __name__ == "__main__":
-    p = LongestWord(3)
+    p = RockPaperScissors(3)
     p.play()
 
