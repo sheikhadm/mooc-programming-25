@@ -30,7 +30,7 @@ class OrderBook:
         return self.orders
     
     def programmers(self):
-        return set([x.programmer for x in self.orders])
+        return list(set([x.programmer for x in self.orders]))
 
     def mark_finished(self,id:int):
         c = False
@@ -50,9 +50,10 @@ class OrderBook:
         unfinished_task = 0
         finished_workload = 0
         unfinished_workload = 0
-        c = False
+        c = True
         for x in self.orders:
             if x.programmer == programmer:
+                c = False
                 if x.is_finished() == True:
                     finished_task += 1
                     finished_workload += x.workload
@@ -73,6 +74,8 @@ if __name__ == "__main__":
 
     orders.mark_finished(1)
     orders.mark_finished(2)
+    t = OrderBook()
+    t.add_order("program webstore", "Andy", 10)
 
     status = orders.status_of_programmer("Adele")
     print(status)

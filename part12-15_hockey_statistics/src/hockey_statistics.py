@@ -131,11 +131,21 @@ import json
 # ---- Helper function for consistent formatting ----
 
 def format_player(p):
-    # name: 21 chars, team: 3 chars starting at col 22
-    # goals right-aligned to col 29
-    # assists right-aligned so that + is at col 30
-    # = at col 35
-    return f"{p['name']:<21}{p['team']:>4}{p['goals']:>4} + {p['assists']:>2} = {p['goals'] + p['assists']:>3}"
+    name = p['name'].strip()
+    team = p['team']
+    goals = p['goals']
+    assists = p['assists']
+    total = goals + assists
+
+    return (
+        f"{name:<21}"
+        f"{team:>3}"
+        f"{goals:>4}"
+        f" +"
+        f"{assists:>3}"
+        f" ="
+        f"{total:>4}"
+    )
 
 
 # ---- Main program ----

@@ -51,7 +51,7 @@ class Record:
             else:
                 grades[int(v.grade)] += 1
         print(f'{len(self.__records)} completed courses, a total of {credit} credits')
-        print(f'mean {grade / 5}')
+        print(f'mean {round(grade / len(self.__records),1)}')
         print(f'grade distribution')
         print(f'5: {'x' * grades[5]}')
         print(f'4: {'x' * grades[4]}')
